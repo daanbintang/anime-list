@@ -1,11 +1,9 @@
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/AnimeList/Header";
+import { getAnimeResponse } from "./libs/api-libs";
 
 const Page = async () => {
-  const reqTopAnime = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/top/anime?limit=8`,
-  );
-  const topAnime = await reqTopAnime.json();
+  const topAnime = await getAnimeResponse("top/anime", "limit=8")
 
   return (
     <div className="container mx-auto px-2">

@@ -5,10 +5,10 @@ import React from "react";
 const AnimeList = ({ api }) => {
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 place-content-center">
+      <div className="mb-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 place-content-center">
         {api.data?.map((anime) => (
           <Link
-            href={`/detail/${anime.mal_id}`}
+            href={`/anime/${anime.mal_id}`}
             key={anime.mal_id}
             className="relative overflow-hidden group shadow-xl rounded-md text-primary mx-1"
           >
